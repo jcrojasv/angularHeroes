@@ -10,6 +10,7 @@ import { Heroe } from '../interfaces/heroes.interface';
 export class HeroesService {
 
   private apiUrl: string = environment.apiUrl;
+  private limit: number = 6;
 
   constructor(private http: HttpClient) { }
 
@@ -19,5 +20,9 @@ export class HeroesService {
 
   infoHeroe(id: string): Observable<Heroe> {
     return this.http.get<Heroe>(`${this.apiUrl}/${id}`);
+  }
+
+  getSugerencias(termino: string): Observable<Heroe[]> {
+    return this.http.get<Heroe[]>(`${this.apiUrl}?q=${termino}&_limit=${this.limit}`);
   }
 }
