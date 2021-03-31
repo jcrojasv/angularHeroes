@@ -38,8 +38,15 @@
   </div>
 </div>
 
-<div fxLayout="column">
+<div fxLayout="column" *ngIf="heroeSeleccionado">
   <pre>{{ heroeSeleccionado | json }}</pre>
+  <br>
+  <button mat-button
+      color="warn"
+      [routerLink]="[ '/heroes', heroeSeleccionado.id ]"
+    >
+      Leer más...
+  </button>
 </div>
 
 

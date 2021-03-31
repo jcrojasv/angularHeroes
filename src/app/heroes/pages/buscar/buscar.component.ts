@@ -33,7 +33,4 @@ export class BuscarComponent implements OnInit {
     this.termino = heroe.superhero;
     this.heroeSeleccionado = heroe;
   }
-
-
-
 }
